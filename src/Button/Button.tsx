@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React from 'React';
+import React from 'react';
 import './Button.css'
 
 export interface MyButtonProps {
@@ -31,7 +31,7 @@ const Button: React.FC<MyButtonProps> = ({
             type={type}
             id={id}
             key={key}
-            className={classNames(`btn_${size}`, `btn_${style}`, className)}
+            className={classNames(`btn`, `btn_${size}`, `btn_${style}`, className)}
             style={
                 {
                     color: color,

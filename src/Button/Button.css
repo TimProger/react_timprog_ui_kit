@@ -1,24 +1,27 @@
 .btn {
-    border: none;
     cursor: pointer;
+    border: none;
 }
 
 .btn_large {
-    width: 200px;
-    height: 50px;
+    width: 150px;
+    height: 40px;
+    font-size: var(--font-main3);
 }
 
 .btn_medium {
     width: 100px;
     height: 30px;
+    font-size: var(--font-main2);
 }
 
 .btn_small {
     width: 50px;
     height: 20px;
+    font-size: var(--font-main1);
 }
 
 .btn_outline {
-    outline: 3px solid;
+    outline: var(--outline-btn1) solid;
     border-radius: 2px;
 }
