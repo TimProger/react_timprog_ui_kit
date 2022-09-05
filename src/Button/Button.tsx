@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
+import { createRipple } from './Button.utils'
 import './Button.css'
 
 export interface MyButtonProps {
@@ -12,6 +13,8 @@ export interface MyButtonProps {
     className?: string;
     id?: string;
     key?: number | string | null;
+    ripple?: boolean;
+    onClick?: (props?: any) => void
 }
 
 const Button: React.FC<MyButtonProps> = ({
@@ -20,10 +23,12 @@ const Button: React.FC<MyButtonProps> = ({
     color = 'black',
     background = 'inherit',
     size = 'medium',
-    style = 'outline',
+    style = 'outer',
     className = '',
     id = '',
     key = null,
+    ripple= true,
+    onClick,
     ...props
 }) => {
     return (
@@ -38,7 +43,11 @@ const Button: React.FC<MyButtonProps> = ({
                     outlineColor: color,
                     background: background
                 }
-            }>
+            }
+            onClick={ripple ? (e)=>{
+                createRipple(e)
+            } : (e) => onClick && onClick(e)}
+        >
             {children}
         </button>
     )
