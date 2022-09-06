@@ -14,7 +14,10 @@ export interface MyButtonProps {
     id?: string;
     key?: number | string | null;
     ripple?: boolean;
-    onClick?: (props?: any) => void
+    onClick?: (props?: any) => void;
+    success?: boolean; // Пока не используется
+    error?: boolean; // Пока не используется
+    disabled?: boolean;
 }
 
 const Button: React.FC<MyButtonProps> = ({
@@ -29,10 +32,12 @@ const Button: React.FC<MyButtonProps> = ({
     key = null,
     ripple= true,
     onClick,
+    disabled = false,
     ...props
 }) => {
     return (
         <button
+            disabled={disabled}
             type={type}
             id={id}
             key={key}

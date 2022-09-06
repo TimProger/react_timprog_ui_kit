@@ -1,5 +1,4 @@
-/// <reference types="react" />
-import React from 'React';
+import React from 'react';
 import './Button.css';
 export interface MyButtonProps {
     children: React.ReactNode;
@@ -11,6 +10,8 @@ export interface MyButtonProps {
     className?: string;
     id?: string;
     key?: number | string | null;
+    ripple?: boolean;
+    onClick?: (props?: any) => void;
 }
 declare const Button: React.FC<MyButtonProps>;
 export default Button;
