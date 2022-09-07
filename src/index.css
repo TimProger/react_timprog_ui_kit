@@ -1,5 +1,9 @@
 :root{
 
+    /* TEXT */
+    --color-main2: white;
+    --color-main: black;
+
     /* BUTTON */
     --font-main1: 12px;
     --font-main2: 14px;

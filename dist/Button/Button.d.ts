@@ -12,6 +12,9 @@ export interface MyButtonProps {
     key?: number | string | null;
     ripple?: boolean;
     onClick?: (props?: any) => void;
+    success?: boolean;
+    error?: boolean;
+    disabled?: boolean;
 }
 declare const Button: React.FC<MyButtonProps>;
 export default Button;

@@ -24,6 +24,10 @@
     font-size: var(--font-main1);
 }
 
+.btn_inner {
+    background-color: rgba(255, 255, 255, var(--ripple-opacity));
+}
+
 .btn_outline {
     outline: var(--outline-btn1) solid;
     border-radius: 2px;
@@ -34,6 +38,13 @@ span.ripple {
     border-radius: 50%;
     transform: scale(0);
     animation: ripple var(--ripple-animation-time) linear;
+}
+
+.btn_outline span.ripple {
+    background-color: rgba(0, 0, 0, var(--ripple-opacity));
+}
+
+.btn_inner span.ripple {
     background-color: rgba(255, 255, 255, var(--ripple-opacity));
 }
 
