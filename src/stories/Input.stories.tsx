@@ -45,6 +45,6 @@ export const Tel = () => {
   return <Input
       type='tel'
       placeholder='Tel'
-      onChange={(e)=>setValue(e.target.value)}
+      onChange={setValue}
       value={value} />;
 };

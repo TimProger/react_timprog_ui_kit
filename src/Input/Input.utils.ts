@@ -1,20 +1,20 @@
 import React from 'react';
 
-export const onChangePhone = (e: React.ChangeEvent<HTMLInputElement>, setPhone: (prev: any) => void) => {
+export const onChangePhone = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value)
     let phoneVal = e.target.value.replace(/\D/g, ""),
-        formattedPhone = '+7 '
+        formattedPhone = `+7 `
 
     if(!phoneVal){
-        setPhone('');
+        return '';
     }
 
     if (phoneVal.length > 1) {
-        formattedPhone += '' + phoneVal.substring(1, 4);
+        formattedPhone += '(' + phoneVal.substring(1, 4);
     }
 
     if (phoneVal.length >= 5) {
-        formattedPhone += ' ' + phoneVal.substring(4, 7);
+        formattedPhone += ') ' + phoneVal.substring(4, 7);
     }
 
     if (phoneVal.length >= 8) {
@@ -25,5 +25,5 @@ export const onChangePhone = (e: React.ChangeEvent<HTMLInputElement>, setPhone: 
         formattedPhone += ' ' + phoneVal.substring(9, 11);
     }
 
-    setPhone(formattedPhone);
+    return formattedPhone;
 }

@@ -17,6 +17,8 @@ export interface MyInputProps {
     key?: number | string | null;
     onClick?: (props?: any) => void;
     onChange?: (props?: any) => void;
+    maxLength: number;
+    minLength: number;
 }
 
 const Input: React.FC<MyInputProps> = ({
@@ -106,7 +108,7 @@ const Input: React.FC<MyInputProps> = ({
                             background: background
                         }
                     }
-                    onChange={(e) => onChange(e)}
+                    onChange={(e) => onChange(onChangePhone(e))}
                     type="tel" />
             )
         default:
